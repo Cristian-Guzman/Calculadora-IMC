@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Krub:wght@300;400;600;700&display=swap");
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Krub", sans-serif;
+}
+
+header {
+  background-color: #67b639;
+}
+
+.contenedor {
+  margin: 0 auto;
+  max-width: 90rem;
+  width: 95%;
+}
+
+.barra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.barra__titulo {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+section {
+  text-align: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#hombre {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  content: url(../images/man-icon.png);
+  width: 5rem;
+  height: 5rem;
+}
+
+#mujer {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  content: url(../images/woman-icon.png);
+  width: 5rem;
+  height: 5rem;
+}
+/*# sourceMappingURL=style.css.map */

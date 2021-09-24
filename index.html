@@ -4,12 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/normalize.scss">
-    <link rel="stylesheet" href="styles/style.scss">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
     <title>Calculadora IMC</title>
 </head>
 <body>
-    
+    <header>
+            <nav class="contenedor barra">
+                <a href="index.html"><img src="images/logo.PNG" alt="Calculadora IMC"></a>
+                <a class="barra__titulo" href="estadistica.html">Estadisticas</a>
+            </nav>
+    </header>
+   <main>
+    <section class="contenedor">
+        <h1>Descubre su indice de masa corporal</h1>
+        <form>
+            <div class="sexo">
+                <p>Sexo</p>
+                <input type="radio" name="genero" id="hombre" value="hombre">
+                <input type="radio" name="genero" id="mujer" value="mujer">
+            </div>
+            <div class="edad">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad">
+            </div>
+            <div class="peso">
+                <label for="peso">Peso</label>
+                <input type="number" id="peso">
+            </div>
+            <div class="altura">
+                <label for="altura">Altura</label>
+                <input type="number" id="altura">
+            </div>
+            <input class="boton" type="submit" value="CALCULAR IMC">
+        </form>
+    </section>
+   </main>
     <script src="scripts/script.js"></script>
 </body>
 </html>

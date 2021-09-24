@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Krub:wght@300;400;600;700&display=swap');
+$negro: #323232;
+$verdePrimario: #67b639;
+$verde: #66b23d;
+$gris: #a7afa6;
+$blanco: #fff;
+$fuentePrincipal: 'Krub', sans-serif;
+
+body {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: $fuentePrincipal;
+}
+
+header {
+    background-color: $verdePrimario;
+}
+.contenedor {
+    margin: 0 auto;
+    max-width: 90rem;
+    width: 95%;
+}
+.barra {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__titulo {
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: $blanco;
+    }
+}
+
+section {
+    text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#hombre {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    content: url(../images/man-icon.png);
+    width: 5rem;
+    height: 5rem;
+}
+#mujer {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    content: url(../images/woman-icon.png);
+    width: 5rem;
+    height: 5rem;
+}
