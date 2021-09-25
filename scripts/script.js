@@ -6,35 +6,43 @@ let altura = document.querySelector('#altura');
 let peso = document.querySelector('#peso');
 let submit = document.querySelector('.boton');
 
-
 submit.addEventListener('click', e => {
     if (altura.value > 100) {
         altura.value = altura.value / 100;
     }
-    if (peso.value !== undefined && altura.value !== undefined && (genero[0].value !== undefined || genero[1].value !== undefined) && edad.value !== undefined) {
+    if (peso.value !== "" && altura.value !== "" && (genero[0].value !== "" || genero[1].value !== "") && edad.value !== "") {
         
-        let result = peso.value / (Math.pow(altura.value, 2))
-        for (let i = 0; i< genero.length; i++){
-            if (genero[i].checked) {
-                console.log(`Genero: ${genero[i].value}
-                Edad: ${edad.value} años
-                Peso: ${peso.value} KG
-                Altura: ${altura.value} Metros`);
+        let id = 0;
+        let sexo;
+        let imc;
+        let result = peso.value / (Math.pow(altura.value, 2));
+        for (let i = 0; i < 10; i++) {
+    
+            if (localStorage.getItem(id) == i) {
+                id++;
             }
         }
+        for (let i in genero){
+            if (genero[i].checked) {
+                sexo = genero[i].value
+            }
+        }
+        let usuario = {genero : sexo, edad : edad.value, peso : peso.value, altura : altura.value, IMC : imc};
+        let usuarioStr = JSON.stringify(usuario);
         result = result.toFixed(1);
         if (result < 18.5) {
-            console.log('bajo peso');
+            imc = 'Por debajo del peso';
         } else if (result < 24.9){
-            console.log('Saludable');
+            imc = 'Saludable';
         } else if (result < 29.9){
-            console.log('Sobrepeso');
+            imc = 'Con sobrepeso';
         } else if (result < 39.9){
-            console.log('Obeso');
         } else if (result > 40) {
-            console.log('Obesidad extrema')
+            imc = 'Obeso';
+            imc = 'Obesidad extrema o de alto riesgo';
         }
-        console.log(result);
+        
+        localStorage.setItem("usuario: "+id, usuarioStr)
     } else {
         alert('Hacen falta campos.');
     }
