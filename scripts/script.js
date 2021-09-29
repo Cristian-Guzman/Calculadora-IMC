@@ -13,15 +13,31 @@ submit.addEventListener('click', e => {
     if (peso.value !== "" && altura.value !== "" && (genero[0].value !== "" || genero[1].value !== "") && edad.value !== "") {
         
         let id = 0;
+        let cas = [];
         let sexo;
         let imc;
         let result = peso.value / (Math.pow(altura.value, 2));
+
+        let val = localStorage.getItem(`usuario: ${id}`);
         for (let i = 0; i < 10; i++) {
-    
-            if (localStorage.getItem(id) == i) {
-                id++;
-            }
+         cas.push(i)   
         }
+
+        /* cas.forEach(e => {
+            
+            if (localStorage.getItem(`usuario: ${id}`)) {
+                console.log(e)
+                id = e;
+                console.log('is working')
+            } else {
+                console.log('is not working')
+            }
+        });
+
+        do {
+         id++;   
+        } while (val); */
+
         for (let i in genero){
             if (genero[i].checked) {
                 sexo = genero[i].value
@@ -41,8 +57,14 @@ submit.addEventListener('click', e => {
             imc = 'Obeso';
             imc = 'Obesidad extrema o de alto riesgo';
         }
-        
-        localStorage.setItem("usuario: "+id, usuarioStr)
+        for (let i = 0; i < 10; i++) {           
+            if (localStorage.getItem(id)) {
+                id = i;
+                localStorage.setItem(id, usuarioStr)
+            } else {
+                localStorage.setItem(id, usuarioStr)
+            }
+        }
     } else {
         alert('Hacen falta campos.');
     }

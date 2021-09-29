@@ -17,23 +17,25 @@
     </header>
    <main>
     <section class="contenedor">
-        <h1>Descubre su indice de masa corporal</h1>
+        <h1 class="titulo">Descubre su indice de masa corporal</h1>
         <form>
-            <div class="sexo">
-                <p>Sexo</p>
-                <input type="radio" name="genero" id="hombre" value="hombre">
-                <input type="radio" name="genero" id="mujer" value="mujer">
+            <div class="sexo flex-center">
+                <p class="casilla-nombre">Sexo</p>
+                <div class="genero">
+                    <input type="radio" name="genero" id="hombre" value="hombre">
+                    <input type="radio" name="genero" id="mujer" value="mujer">
+                </div>
             </div>
-            <div class="edad">
-                <label for="edad">Edad</label>
+            <div class="edad flex-center">
+                <label class="casilla-nombre" for="edad">Edad</label>
                 <input type="number" id="edad">
             </div>
-            <div class="peso">
-                <label for="peso">Peso</label>
+            <div class="peso flex-center">
+                <label class="casilla-nombre" for="peso">Peso</label>
                 <input type="number" id="peso">
             </div>
-            <div class="altura">
-                <label for="altura">Altura</label>
+            <div class="altura flex-center">
+                <label class="casilla-nombre" for="altura">Altura</label>
                 <input type="number" id="altura">
             </div>
             <input class="boton" type="submit" value="CALCULAR IMC">

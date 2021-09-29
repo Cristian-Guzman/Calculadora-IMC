@@ -4,6 +4,7 @@ $verdePrimario: #67b639;
 $verde: #66b23d;
 $gris: #a7afa6;
 $blanco: #fff;
+$azulClaro: #35D6ED;
 $fuentePrincipal: 'Krub', sans-serif;
 
 body {
@@ -15,11 +16,33 @@ body {
 header {
     background-color: $verdePrimario;
 }
+/* Utilidades */
 .contenedor {
     margin: 0 auto;
     max-width: 90rem;
     width: 95%;
 }
+.titulo {
+    font-size: 2rem;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.boton { 
+    padding: 1rem 2rem;
+    background-color: $verdePrimario;
+    border: none;
+    color: $blanco;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s linear;
+    &:hover {
+        background-color: rgba($verdePrimario, 0.85);
+    }
+}
+/* Barra de navegación */
 .barra {
     display: flex;
     justify-content: space-around;
@@ -32,22 +55,85 @@ header {
     }
 }
 
-section {
-    text-align: center;
-}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
+}
+/* Primera sección */
+section {
+    text-align: center;
+}
+input {
+    margin-left: 2rem;
+    font-size: 1rem;
+}
+.casilla-nombre {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+/* Div sexo */
+.sexo {
+    margin-bottom: 2rem;
+    .casilla-nombre {
+        margin-right: 3rem;
+        margin-left: -4.3rem;
+        margin-top: 2rem;
+    }
+    .genero {
+        margin-left: 1rem;
+        input {
+            &:hover {
+                filter: opacity(55%);
+                cursor: pointer;
+            }
+            transition: all .4s ease;
+        }
+    }
+}
+/* Div edad */
+.edad {
+    margin-bottom: 2rem;
+}
+#edad {
+    margin-left: 1.8rem;
+    width: 20rem;
+    transition: all .4s ease;
+    &:hover {
+        border: 1px solid $azulClaro;
+    }
+}
+/* Div peso */
+.peso {
+    margin-bottom: 2rem;
+}
+#peso {
+    width: 20rem;
+    transition: all .4s ease;
+    &:hover {
+        border: 1px solid $azulClaro;
+    }
+}
+/* Div altura */
+.altura {
+    margin-bottom: 2rem;
+}
+#altura {
+    margin-left: 1.2rem;
+    width: 20rem;
+    transition: all .4s ease;
+    &:hover {
+        border: 1px solid $azulClaro;
+    }
 }
 
-#hombre {
+#hombre { /* Icono hombre */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -55,7 +141,7 @@ input[type=number] {
     width: 5rem;
     height: 5rem;
 }
-#mujer {
+#mujer { /* Icono mujer */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
