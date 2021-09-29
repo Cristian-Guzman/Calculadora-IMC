@@ -63,6 +63,12 @@ header {
   font-size: 1.4rem;
   text-decoration: none;
   color: #fff;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+.barra__titulo:hover {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Chrome, Safari, Edge, Opera */

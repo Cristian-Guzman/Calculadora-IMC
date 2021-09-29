@@ -52,6 +52,10 @@ header {
         font-size: 1.4rem;
         text-decoration: none;
         color: $blanco;
+        transition: all .4s linear;
+        &:hover {
+            color: rgba($blanco, 0.8);
+        }
     }
 }
 
