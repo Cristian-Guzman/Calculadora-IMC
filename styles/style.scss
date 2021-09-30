@@ -153,3 +153,40 @@ input {
     width: 5rem;
     height: 5rem;
 }
+
+/* Segunda sección */
+
+.resultado {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.degradado {
+    display: flex;
+    width: 31rem;
+    height: 2rem;
+    margin-bottom: 3rem;
+    background: rgb(27,127,215);
+    background: linear-gradient(90deg, rgba(27,127,215,1) 0%, rgba(64,188,102,1) 25%, rgba(252,186,0,1) 75%, rgba(250,64,48,1) 100%);
+}
+.flecha {
+    transform: translate(30rem, 0) rotate(180deg);
+    height: 1.3rem;
+    margin-top: 2rem;
+}
+.border {
+    width: 30rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $gris;
+}
+
+.categoria {
+    display: flex;
+    gap: 1.4rem;
+}
+.categorias__info {
+    font-weight: 600;
+}

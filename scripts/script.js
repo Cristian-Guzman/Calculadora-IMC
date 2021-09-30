@@ -6,9 +6,16 @@ let edad = document.querySelector('#edad');
 let altura = document.querySelector('#altura');
 let peso = document.querySelector('#peso');
 let submit = document.querySelector('.boton');
+let flecha = document.querySelector('.flecha');
+
+/* 0rem = azul, 10rem = verde, 20rem = amarillo, 30rem = rojo */
+flecha.style.transform =  'translate(20rem,0) rotate(180deg)';
 
 /* Creando el addEventListener que se activa al presionar el botón "Calcular IMC" */
 submit.addEventListener('click', e => {
+    let edVal = edad.value;
+    let alVal = altura.value;
+    let peVal = peso.value;
 
     /* Si en la casilla de altura se ingresan centimetros en vez de metros, este hará una conversión de CM a M */
     if (altura.value > 100) { 
@@ -16,11 +23,11 @@ submit.addEventListener('click', e => {
     }
 
     /* Condicional para que sea obligatorio tener los campos del formulario lleno. */
-    if (peso.value !== "" && altura.value !== "" && (genero[0].value !== "" || genero[1].value !== "") && edad.value !== "") {
+    if ((peVal !== "" && alVal !== "" && (genero[0].value !== "" || genero[1].value !== "") && edVal !== "") && (peVal > 0 && alVal > 0 && edVal > 0)) {
         let id = numRandom(); /* id almacena un número random entre 0 a 100 */
         let sexo;
         let imc;
-        let resultadoImc = peso.value / (Math.pow(altura.value, 2)); /* Operación para averiguar el IMC */
+        let resultadoImc = peso.value / (Math.pow(altura.value, 2)); /* Operación para averiguar el IMC */  
 
         /* Comprobando si se ha seleccionado algún género en la casilla sexo */
         for (let i in genero){
@@ -53,7 +60,7 @@ submit.addEventListener('click', e => {
         } 
         localStorage.setItem(`usuario: ${id}`, usuarioInfo); /* Almacenar en el localStorage el valor del usuario con sus respectivos valores. */
     } else {
-        alert('Hace falta rellenar campos.');
+        alert('Rellena los campos correctamente.');
     }
     e.preventDefault();
 })
