@@ -7,15 +7,14 @@ let altura = document.querySelector('#altura');
 let peso = document.querySelector('#peso');
 let submit = document.querySelector('.boton');
 let flecha = document.querySelector('.flecha');
-
-/* 0rem = azul, 10rem = verde, 20rem = amarillo, 30rem = rojo */
-flecha.style.transform =  'translate(20rem,0) rotate(180deg)';
+let resultado = document.querySelector('.resultado-imc');
 
 /* Creando el addEventListener que se activa al presionar el botón "Calcular IMC" */
 submit.addEventListener('click', e => {
     let edVal = edad.value;
     let alVal = altura.value;
     let peVal = peso.value;
+    let vw;
 
     /* Si en la casilla de altura se ingresan centimetros en vez de metros, este hará una conversión de CM a M */
     if (altura.value > 100) { 
@@ -27,7 +26,8 @@ submit.addEventListener('click', e => {
         let id = numRandom(); /* id almacena un número random entre 0 a 100 */
         let sexo;
         let imc;
-        let resultadoImc = peso.value / (Math.pow(altura.value, 2)); /* Operación para averiguar el IMC */  
+        let resultadoImc = peso.value / (Math.pow(altura.value, 2)); /* Operación para averiguar el IMC */
+        resultado.innerHTML = resultadoImc.toFixed(2);  
 
         /* Comprobando si se ha seleccionado algún género en la casilla sexo */
         for (let i in genero){
@@ -39,15 +39,24 @@ submit.addEventListener('click', e => {
         /* Comprobando en qué categoría encaja el valor del IMC */
         if (resultadoImc < 18.5) {
             imc = 'Por debajo del peso';
+            vw = 0;
         } else if (resultadoImc < 24.9){
             imc = 'Saludable';
+            vw = 10;
         } else if (resultadoImc < 29.9){
-            imc = 'Con sobrepeso';
+            imc = 'Exceso de peso';
+            vw = 20;
         } else if (resultadoImc < 39.9){
-        } else if (resultadoImc > 40) {
             imc = 'Obeso';
+            vw = 30;
+        } else if (resultadoImc > 40) {
             imc = 'Obesidad extrema o de alto riesgo';
+            vw = 40
         }
+
+        /*Cambiar la ubicación de la flecha dependiendo de la categoría del IMC */
+        flechaPosicion(vw);
+        
         /* usuario almacena un objeto con los valores de cada casilla en el formulario */
         let usuario = {genero : sexo, edad : edad.value, peso : peso.value, altura : altura.value, IMC : imc};
         let usuarioInfo = JSON.stringify(usuario); /* Convirtiendo usuario en una cadena */
@@ -67,7 +76,22 @@ submit.addEventListener('click', e => {
 
 /* Función que retorna un valor random entre 0 y 100 */
 const numRandom = () => {
-        let ramdom = Math.random() * 101;
-        return ramdom.toFixed(0);
+    let ramdom = Math.random() * 101;
+    return ramdom.toFixed(0);
 }
 
+/*Cambiar la ubicación de la flecha dependiendo de la categoría del IMC */
+const flechaPosicion = vw => {
+    /* 0vw = azul, 10vw = verde, 20vw = amarillo, 30vw = rojo, 40vw = morado */
+    if (vw == 0) {
+        flecha.style.transform =  'translate(0,0) rotate(180deg)';
+    } else if (vw == 10) {
+        flecha.style.transform =  'translate(10vw,0) rotate(180deg)';
+    } else if (vw == 20) {
+        flecha.style.transform =  'translate(20vw,0) rotate(180deg)';
+    } else if (vw == 30) {
+        flecha.style.transform =  'translate(30vw,0) rotate(180deg)';
+    } else if (vw == 40) {
+        flecha.style.transform =  'translate(40vw,0) rotate(180deg)';
+    }
+}
