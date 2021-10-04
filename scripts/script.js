@@ -58,7 +58,7 @@ submit.addEventListener('click', e => {
         flechaPosicion(vw);
         
         /* usuario almacena un objeto con los valores de cada casilla en el formulario */
-        let usuario = {genero : sexo, edad : edad.value, peso : peso.value, altura : altura.value, IMC : imc};
+        let usuario = {sexo : sexo, edad : edad.value, peso : peso.value, altura : altura.value, imc : imc};
         let usuarioInfo = JSON.stringify(usuario); /* Convirtiendo usuario en una cadena */
         resultadoImc = resultadoImc.toFixed(1);
         

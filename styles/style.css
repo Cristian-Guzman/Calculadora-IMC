@@ -65,6 +65,7 @@ header {
   color: #fff;
   -webkit-transition: all .4s linear;
   transition: all .4s linear;
+  font-weight: 700;
 }
 
 .barra__titulo:hover {
@@ -339,5 +340,18 @@ input {
   display: flex;
   gap: 1.4rem;
   margin-bottom: 1rem;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#chart {
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
