@@ -125,9 +125,13 @@ input {
 }
 #edad {
     margin-left: 1.8rem;
+    outline: none;
     width: 20rem;
     transition: all .4s ease;
     &:hover {
+        border: 1px solid $azulClaro;
+    }
+    &:focus {
         border: 1px solid $azulClaro;
     }
 }
@@ -137,8 +141,12 @@ input {
 }
 #peso {
     width: 20rem;
+    outline: none;
     transition: all .4s ease;
     &:hover {
+        border: 1px solid $azulClaro;
+    }
+    &:focus {
         border: 1px solid $azulClaro;
     }
 }
@@ -148,9 +156,13 @@ input {
 }
 #altura {
     margin-left: 1.2rem;
+    outline: none;
     width: 20rem;
     transition: all .4s ease;
     &:hover {
+        border: 1px solid $azulClaro;
+    }
+    &:focus {
         border: 1px solid $azulClaro;
     }
 }

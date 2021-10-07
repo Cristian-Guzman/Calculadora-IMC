@@ -167,12 +167,17 @@ input {
 
 #edad {
   margin-left: 1.8rem;
+  outline: none;
   width: 20rem;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 #edad:hover {
+  border: 1px solid #35D6ED;
+}
+
+#edad:focus {
   border: 1px solid #35D6ED;
 }
 
@@ -183,11 +188,16 @@ input {
 
 #peso {
   width: 20rem;
+  outline: none;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 #peso:hover {
+  border: 1px solid #35D6ED;
+}
+
+#peso:focus {
   border: 1px solid #35D6ED;
 }
 
@@ -198,12 +208,17 @@ input {
 
 #altura {
   margin-left: 1.2rem;
+  outline: none;
   width: 20rem;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
 
 #altura:hover {
+  border: 1px solid #35D6ED;
+}
+
+#altura:focus {
   border: 1px solid #35D6ED;
 }
 

@@ -8,6 +8,7 @@ let peso = document.querySelector('#peso');
 let submit = document.querySelector('.boton');
 let flecha = document.querySelector('.flecha');
 let resultado = document.querySelector('.resultado-imc');
+let windowWidth = window.screen.width;
 
 /* Creando el addEventListener que se activa al presionar el botón "Calcular IMC" */
 submit.addEventListener('click', e => {
@@ -53,16 +54,20 @@ submit.addEventListener('click', e => {
             imc = 'Obesidad extrema o de alto riesgo';
             vw = 40
         }
-
+        
         /*Cambiar la ubicación de la flecha dependiendo de la categoría del IMC */
-        flechaPosicion(vw);
+        if (windowWidth < 900) {
+            flechaPosicionMovil(vw);
+        } else {
+            flechaPosicion(vw);
+        }
         
         /* usuario almacena un objeto con los valores de cada casilla en el formulario */
         let usuario = {sexo : sexo, edad : edad.value, peso : peso.value, altura : altura.value, imc : imc};
         let usuarioInfo = JSON.stringify(usuario); /* Convirtiendo usuario en una cadena */
         resultadoImc = resultadoImc.toFixed(1);
         
-        /* Si el usuario existe cambiar el valor del id */
+        /* Si el usuario existe cambiar el valor del id del usuario*/
         if (localStorage.getItem(`usuario: ${id}`)) {
             id = numRandom();
             alert('Vuelve a intentarlo, el usuario no se guardó correctamente..')
@@ -94,4 +99,19 @@ const flechaPosicion = vw => {
     } else if (vw == 40) {
         flecha.style.transform =  'translate(40vw,0) rotate(180deg)';
     }
+}
+
+const flechaPosicionMovil = vw => {
+    /* 0vw = azul, 20vw = verde, 40vw = amarillo, 60vw = rojo, 80vw = morado */
+        if (vw == 0) {
+            flecha.style.transform =  'translate(0,0) rotate(180deg)';
+        } else if (vw == 10) {
+            flecha.style.transform =  'translate(20vw,0) rotate(180deg)';
+        } else if (vw == 20) {
+            flecha.style.transform =  'translate(40vw,0) rotate(180deg)';
+        } else if (vw == 30) {
+            flecha.style.transform =  'translate(60vw,0) rotate(180deg)';
+        } else if (vw == 40) {
+            flecha.style.transform =  'translate(80vw,0) rotate(180deg)';
+        }   
 }
